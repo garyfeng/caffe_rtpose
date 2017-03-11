@@ -30,7 +30,7 @@ WORKDIR $CAFFE_ROOT
 RUN pip install --upgrade pip
 RUN for req in $(cat python/requirements.txt) pydot; do pip install $req; done
 RUN mkdir build && cd build && \
-    cmake -DUSE_CUDNN=1 -DBUILD_SHARED_LIB=ON .. && \
+    cmake -DUSE_CUDNN=1 .. && \
     make -j"$(nproc)" && make install
 
 ENV PYCAFFE_ROOT $CAFFE_ROOT/python
