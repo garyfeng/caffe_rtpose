@@ -1,4 +1,4 @@
-FROM alantrrs/cuda-opencv
+FROM alantrrs/cuda-opencv:contrib
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libatlas-base-dev \
